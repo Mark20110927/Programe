@@ -1,0 +1,8 @@
+temp = input("猜一下小甲鱼想的是什么数字\n")
+guess = int(temp)
+if guess == 8:
+    print("你是小甲鱼心里的蛔虫吗？！")
+    print("哼，猜中了也被有奖励！")
+else:
+    print("猜错啦，小甲鱼想的是8！")
+print("游戏结束，不玩啦^_^")
