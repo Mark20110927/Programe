@@ -3,7 +3,7 @@
     "configurations": [
 
         {
-            "name": "Rust Project", 
+            "name": "Rust Cargo.toml", 
             "type": "lldb",
             "request": "launch", 
             "program": "${fileDirname}/../target/debug/${fileBasenameNoExtension}", 
@@ -21,7 +21,7 @@
             "cwd": "${fileDirname}"       
         },
         {
-            "name": "Rust Cargo.toml", 
+            "name": "Rust Project", 
             "type": "lldb",
             "request": "launch", 
             "cargo": {
