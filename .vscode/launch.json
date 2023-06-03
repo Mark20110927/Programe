@@ -8,11 +8,8 @@
             "request": "launch", 
             "program": "${fileDirname}/../target/debug/*.exe", 
             "args": [], 
-            "cwd": "${fileDirname}/..",
             "preLaunchTask":"rustbuild",
-           
         },
-
         
         {
             "name": "C/C++",
