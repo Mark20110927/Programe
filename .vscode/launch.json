@@ -3,15 +3,31 @@
     "configurations": [
 
         {
-            "name": "Rust", 
+            "name": "Rust Project", 
             "type": "lldb",
             "request": "launch", 
-            "program": "${fileDirname}/../target/debug/text.exe", 
+            "program": "${fileDirname}/../target/debug/${fileBasenameNoExtension}", 
             "args": [], 
-            "preLaunchTask":"rust-build",
+            "preLaunchTask":"rust-project-build",
             "cwd": "${fileDirname}/.."       
         },
-
+        {
+            "name": "Rust File", 
+            "type": "lldb",
+            "request": "launch", 
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe", 
+            "args": [], 
+            "preLaunchTask":"rust-file-build",
+            "cwd": "${fileDirname}"       
+        },
+        {
+            "name": "Rust Cargo.toml", 
+            "type": "lldb",
+            "request": "launch", 
+            "cargo": {
+                "args": ["build", "--manifest-path", "${fileDirname}/../Cargo.toml"]
+            }    
+        },
         {
             "name": "C/C++",
             "type": "cppdbg",

@@ -1,8 +1,18 @@
 {
     "tasks": [
+        {
+            "label": "rust-file-build",
+            "group": "build",
+            "type": "shell",
+            "command": "rustc ${fileBasename}",
+            "problemMatcher": "$rustc",
+            "options": {
+                "cwd": "${fileDirname}/"
+            },
+        },
 
         {
-            "label": "rust-build",
+            "label": "rust-project-build",
             "group": "build",
             "type": "shell",
             "command": "cargo build",
