@@ -1,18 +1,23 @@
 {
     "tasks": [
+
         {
-			"type": "cargo",
-			"command": "build",
-			"problemMatcher": [
-				"$rustc"
-			],
-			"group": "build",
-			"label": "rustbuild",
+            "label": "rust-build",
+            "group": "build",
+            "type": "shell",
+            "command": "cargo build",
+            "problemMatcher": "$rustc",
             "options": {
                 "cwd": "${fileDirname}/.."
             },
-		},
-
+        },
+        {
+            "label": "rust-build (Release)",
+            "group": "build",
+            "type": "shell",
+            "command": "cargo build --release",
+            "problemMatcher": "$rustc",
+        },
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe 生成活动文件",

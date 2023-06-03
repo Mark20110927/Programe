@@ -6,11 +6,12 @@
             "name": "Rust", 
             "type": "lldb",
             "request": "launch", 
-            "program": "${fileDirname}/../target/debug/*.exe", 
+            "program": "${fileDirname}/../target/debug/text.exe", 
             "args": [], 
-            "preLaunchTask":"rustbuild",
+            "preLaunchTask":"rust-build",
+            "cwd": "${fileDirname}/.."       
         },
-        
+
         {
             "name": "C/C++",
             "type": "cppdbg",
