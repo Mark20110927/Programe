@@ -8,11 +8,8 @@
             "request": "launch", 
             "program": "${fileDirname}/../target/debug/*.exe", 
             "args": [], 
-            "stopAtEntry": false, 
             "cwd": "${fileDirname}/..",
-            "environment": [],
             "preLaunchTask":"rustbuild",
-            "externalConsole": true, 
            
         },
 
