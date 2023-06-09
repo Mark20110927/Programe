@@ -7,11 +7,11 @@ int main(){
     for(int i = 0; i < n; i ++) cin >> a[i];
     cin >> x;
     sort(a, a + n);
-    int l = 0, mid, r = n - 1, ans = -1;
+    int l = 0, mid, r = n - 1, ans = 0;
     while(l <= r){
         mid = (l + r) / 2;
         if(a[mid] == x){
-            ans = mid;
+            ans = 1;
             r = mid - 1;
         }
         else if(a[mid] > x){
@@ -21,6 +21,9 @@ int main(){
             l = mid + 1;
         }
     }
-    cout << ans;
+    if(ans)
+        cout << l;
+    else
+        cout << -1;
     return 0;
 }
