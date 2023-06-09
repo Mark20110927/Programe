@@ -7,20 +7,19 @@ int main(){
     for(int i = 0; i < n; i ++)
         cin >> a[i];
     cin >> x;
-    int l = 1, mid = (n - 1)/2, r = n - 1;
+    int l = 0, mid, r = n - 1, ans= -1;
     while(l <= r){
-        if(a[mid - 1] == x){
-            cout << mid;
-            return 0;
+        mid = (l + r) / 2;
+        if(a[mid] == x){
+            ans = mid;
             break;
         }
-        else if(a[mid - 1] < x){
+        else if(a[mid] < x){
             l = mid + 1;
         }
         else{
             r = mid - 1;
         }
-        mid = r / 2;
     }
-    cout << "-1";
+    cout << ans;
 }
