@@ -11,11 +11,11 @@ int main(){
         int l = i + 1, mid, r = n, x = m - a[i];
         while(l <= r){
             mid = (l + r) / 2;
-            if(mid == x){
-                cout << a[i] << ' ' << mid;
+            if(a[mid] == x){
+                cout << a[i] << ' ' << a[mid];
                 return 0;
             }
-            else if(mid > x){
+            else if(a[mid] > x){
                 r = mid - 1;
             }
             else{
