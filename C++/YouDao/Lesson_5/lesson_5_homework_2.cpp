@@ -15,19 +15,25 @@ int main(){
     int l = 1, mid, r = n, ans1, ans2;
     while(l <= r){
         mid = (l + r) / 2;
-        if(a[mid].sum == x1) ans1 = mid;
+        if(a[mid].sum == x1){
+            ans1 = mid;
+            break;
+        }
         else if(a[mid].sum > x1) r = mid - 1;
         else l = mid + 1;
     }
     l = 1, r = n;
     while(l <= r){
         mid = (l + r) / 2;
-        if(a[mid].sum == x2) ans2 = mid;
+        if(a[mid].sum == x2){
+            ans2 = mid;
+            break;
+        }
         else if(a[mid].sum > x2) r = mid - 1;
         else l = mid + 1;
     }
     int res1 = a[ans2].maths - a[ans1].maths;
     int res2 = a[ans2].english - a[ans1].english;
-    printf("%d %d", res1, res2);
+    cout << res1 << ' ' << res2;
     return 0;
 }
