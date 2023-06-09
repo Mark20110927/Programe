@@ -12,7 +12,7 @@ int main(){
         mid = (l + r) / 2;
         if(a[mid] == x){
             ans = mid;
-            r = mid - 1;
+            l = mid + 1;
         }
         else if(a[mid] > x){
             r = mid - 1;
