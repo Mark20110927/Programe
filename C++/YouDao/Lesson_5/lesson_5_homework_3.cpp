@@ -12,7 +12,7 @@ int main(){
         else if(a[mid] > x) l = mid + 1;
         else r = mid - 1;
     }
-    if(ans) cout << l;
+    if(ans) cout << r;
     else cout << -1;
     return 0;
 }
