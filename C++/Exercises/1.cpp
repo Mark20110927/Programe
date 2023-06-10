@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int n, a, b, maxf = 0, res;
+    int n, a, b, res = 0;
+    double maxf = 0;
     cin >> n;
     for(int i = 1; i <= n; i ++){
-        int c;
         cin >> a >> b;
-        c = a - b;
+        double c = (double)b / a;
         if (c > maxf){
             maxf = c;
             res = i;
