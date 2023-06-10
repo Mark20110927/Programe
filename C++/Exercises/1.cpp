@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//顺序查找-消费券
 int main(){
     int n, a, b, res = 0;
     double maxf = 0;
