@@ -11,7 +11,7 @@ struct srore{
 int main(){
     cin >> n;
     for(int i = 1; i <= n; i ++)
-        cin >> a[i].sum >> a[i].chinese >> a[i].maths >> a[i].english;
+        cin >> a[i].sum >> a[i].maths >> a[i].chinese >> a[i].english;
     cin >> x1 >> x2;
     int l = 1, mid, r = n, ans1, ans2;
     while(l <= r){
