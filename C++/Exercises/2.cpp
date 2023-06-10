@@ -6,14 +6,8 @@ int main(){
     cin >> n;
     for(int i = 1; i <= n; i ++) cin >> a[i];
     for(int i = 1; i <= n; i ++){
-        if(a[i] >= maxf){
-            b[a[i]] ++;
-            maxf = a[i];
-        }
-        else{
-            c = i - 1;
-            break;
-        }
+        b[a[i]] ++;
+        c = a[i] > c ? a[i] : c;
     }
     for(int i = 1; i <= c; i ++) cout << b[i] << endl;
     return 0;
