@@ -14,6 +14,6 @@ int main(){
         else if(a > 0) r = mid;
         else l = mid;
     }
-    cout << floor(mid * 1000) / 1000 * 100;
+    printf("%.1lf", floor(mid * 1000) / 1000 * 100);
     return 0;
 }
