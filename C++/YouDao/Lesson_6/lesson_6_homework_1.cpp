@@ -11,10 +11,9 @@ int main(){
     sort(a + 1, a + 1 + m);
     sort(b + 1, b + 1 + n);
     int l = 0, r = maxf, mid, res;
-    bool flag = 0;
     for(int i = 1; i <= n; i ++){
         res = 1e6;
-        flag = 0;
+        l = 0, r = maxf;
         while(l <= r){
             mid = (l + r) / 2;
             if(a[i] == mid){
@@ -23,18 +22,17 @@ int main(){
             }
             else if(a[i] > mid){
                 l = mid + 1;
-                if(abs(a[i] - mid) < res) res = abs(a[i] - mid);
-                flag = true;
-                break;
             }
             else{
                 r = mid - 1;
-                if(abs(a[i] - mid) < res) res = abs(a[i] - mid);
-                flag = true;
-                break;
             }
         }
-        if(!flag) sum += res;
+    if(l > r){
+        if(r < 1) res = a[l] - b[i];
+        else if(l > m) res = b[i] - a[r];
+        else res = min(abs(a[l] - b[i]), abs(b[i] - a[r]));
+    }
+        sum += res;
     }
     cout << sum;
     return 0;
