@@ -2,9 +2,9 @@
 using namespace std;
 int a[1000005], n, k, sum, maxf;
 long long check(int mid){
-    int num = 0;
+    long long num = 0;
     for(int i = 1; i <= n; i ++){
-        if(a[i] > mid) sum += a[i] - mid;
+        if(a[i] > mid) num += a[i] - mid;
     }
     return num;
 }
