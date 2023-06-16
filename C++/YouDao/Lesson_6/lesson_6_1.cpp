@@ -28,7 +28,6 @@ int main(){
             else r = mid - 1;
         }
         if(ans1 != -1 && ans2 != -1) sum += ans2 - ans1 + 1;
-        else sum ++;
     }
     cout << sum;
     return 0;
