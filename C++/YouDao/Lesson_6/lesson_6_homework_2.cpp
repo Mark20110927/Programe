@@ -26,6 +26,10 @@ int main(){
         if(check(mid) >= k) l = mid + 1;
         else r = mid - 1;
     }
+    if(r == 0.00){
+        cout << "0.00";
+        return 0;
+    }
     cout << fixed << setprecision(2) << r / 100 << endl;
     return 0;
 }
