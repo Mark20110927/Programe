@@ -16,7 +16,7 @@ int main(){
         if(a[i] > maxf) maxf = a[i];
     }
     if(sum < k){
-        cout << 0.00;
+        cout << "0.00";
         return 0;
     }
     int l = 1, mid;
