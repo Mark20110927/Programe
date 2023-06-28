@@ -18,6 +18,6 @@ int main(){
         res = 0;
 
     }
-    cout << maxf;
+    cout << max(maxf, res);
 	return 0; 
 } 
