@@ -6,7 +6,7 @@ struct XY{
     int sz;
 } a[105];
 int main(){
-	int n, res = 0;
+	int n, res = 0, maxf = 0;
     cin >> n;
     for(int i = 1; i <= n; i ++){
         cin >> a[i].ss >> a[i].sz;
@@ -14,9 +14,10 @@ int main(){
             res ++;
             continue;
         }
+        if(res > maxf) maxf = res;
         res = 0;
 
     }
-    cout << res;
+    cout << maxf;
 	return 0; 
 } 
