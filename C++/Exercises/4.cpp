@@ -6,7 +6,7 @@ int main(){
     float b = 200, k;
     cin >> n1 >> k;
     n = n1;
-    float a = float(k / 10);
+    float a = float(k / 100.0);
     while(res <= 20){
         res ++;
         if(n >= b && res <= 20) {
@@ -19,7 +19,6 @@ int main(){
         }
         else{
             b += b * a;
-            cout << float(b * a) << endl;
             n += n1;
         }
     }
