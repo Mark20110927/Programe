@@ -18,7 +18,8 @@ int main(){
             return 0;
         }
         else{
-            b *= 1 + a;
+            b += b * a;
+            cout << float(b * a) << endl;
             n += n1;
         }
     }
