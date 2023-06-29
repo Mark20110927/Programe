@@ -2,8 +2,8 @@
 using namespace std;
 //买房子
 int main(){
-	int n1, k, res = 0, n;
-    float b = 200;
+	int n1, res = 0, n;
+    float b = 200, k;
     cin >> n1 >> k;
     n = n1;
     float a = float(k / 10);
