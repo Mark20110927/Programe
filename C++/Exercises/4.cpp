@@ -2,25 +2,21 @@
 using namespace std;
 //买房子
 int main(){
-	int n1, res = 0, n;
-    float b = 200, k;
-    cin >> n1 >> k;
-    n = n1;
-    float a = float(k / 100.0);
-    while(res <= 20){
-        res ++;
-        if(n >= b && res <= 20) {
-            cout << res;
+	int n, k;
+    cin >> n >> k;
+    int sr = n;
+    float fj = 200;
+    float zz = 1 + k / 100.0;
+    int year = 0;
+    while(year <= 20){
+        year ++;
+        if(sr >= fj){
+            cout << year;
             return 0;
         }
-        else if(res > 20){
-            cout << "impossible";
-            return 0;
-        }
-        else{
-            b += b * a;
-            n += n1;
-        }
+        sr += n;
+        fj *= zz;
     }
+    cout << "Impossible";
 	return 0; 
 } 
