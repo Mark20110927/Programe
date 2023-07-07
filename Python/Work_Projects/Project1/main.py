@@ -35,5 +35,10 @@ else:
     else:
         # 打印数据
         for key, value in data.items():
-            print(key, value)
+            if key == 'data':
+                for i in value:
+                    for j in i:
+                        print(j, end=' ')
+                    print()
+        # print(data)
 
