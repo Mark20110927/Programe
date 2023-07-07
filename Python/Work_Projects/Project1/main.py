@@ -2,9 +2,9 @@ import requests
 import json
 from datetime import datetime
 url = "https://www.okex.com/api/v5/market/history-index-candles"
-date_string = "2023-07-04T00:00:00.000Z"
+date_string = str(input("请输入开始时间：")) #"2023-07-04T00:00:00.000Z"
 date = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%fZ")
-date_string1 = "2023-07-05T00:00:00.000Z"
+date_string1 = str(input("请输入结束时间: "))#"2023-07-05T00:00:00.000Z"
 date1 = datetime.strptime(date_string1, "%Y-%m-%dT%H:%M:%S.%fZ")
 params = {
     'instId': 'BTC-USDT',
