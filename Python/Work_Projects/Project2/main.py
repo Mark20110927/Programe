@@ -1,0 +1,47 @@
+import requests
+import json
+from datetime import datetime
+import matplotlib.pyplot as plt
+url = "https://www.okex.com/api/v5/market/history-index-candles"
+date_string = str(input("请输入开始时间：")) #"2023-07-04T00:00:00.000Z"
+date = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%fZ")
+date_string1 = str(input("请输入结束时间: "))#"2023-07-05T00:00:00.000Z"
+date1 = datetime.strptime(date_string1, "%Y-%m-%dT%H:%M:%S.%fZ")
+params = {
+    'instId': input("请输入加密货币的类型："), #'BTC-USDT',
+    'start': date.isoformat() + 'Z',
+    'end': date1.isoformat() + 'Z',
+    'bar': '15m',
+}
+response = requests.get(url, params=params)
+if response.status_code != 200:
+    print(f"请求失败，状态码：{response.status_code}")
+else:
+    data = json.loads(response.text)
+    if 'message' in data:
+        print(f"API返回错误：{data['message']}")
+    else:
+        for key1, value1 in data.items():
+            if key1 == 'data':
+                x = [range(1, len(value1))]
+        y1 = []
+        y2 = []
+        for key, value in data.items():
+            if key == 'data':
+                for i in value:
+                    cnt = 0
+                    for j in i:
+                        cnt += 1
+                        if j != '1':
+                            if cnt == 3:
+                                y1.append(j)
+                            if(cnt == 4):
+                                y2.append(j)
+        plt.figure()
+        plt.subplot(111)
+        plt.plot(x, y1, 'o-', label='最高价格')
+        plt.plot(x, y2, 's-', label='最低价格')
+        for i in range(len(x)):
+            plt.plot([x[i], x[i]], [y1[i], y2[i]], color='green', linewidth=4)
+        plt.legend()
+        plt.show()
