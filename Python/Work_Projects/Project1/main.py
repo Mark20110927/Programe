@@ -34,4 +34,6 @@ else:
         print(f"API返回错误：{data['message']}")
     else:
         # 打印数据
-        print(data)
+        for key, value in data.items():
+            print(key, value)
+
