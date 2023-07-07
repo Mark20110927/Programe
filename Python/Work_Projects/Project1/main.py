@@ -7,7 +7,7 @@ date = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%fZ")
 date_string1 = str(input("请输入结束时间: "))#"2023-07-05T00:00:00.000Z"
 date1 = datetime.strptime(date_string1, "%Y-%m-%dT%H:%M:%S.%fZ")
 params = {
-    'instId': 'BTC-USDT',
+    'instId': input("请输入加密货币的类型："), #'BTC-USDT',
     'start': date.isoformat() + 'Z',
     'end': date1.isoformat() + 'Z',
     'bar': '15m',
