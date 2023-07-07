@@ -21,9 +21,11 @@ else:
     if 'message' in data:
         print(f"API返回错误：{data['message']}")
     else:
+        x = []
         for key1, value1 in data.items():
             if key1 == 'data':
-                x = [range(1, len(value1))]
+                for i in range(len(value1)):
+                    x.append(i)
         y1 = []
         y2 = []
         for key, value in data.items():
@@ -39,8 +41,8 @@ else:
                                 y2.append(j)
         plt.figure()
         plt.subplot(111)
-        plt.plot(x, y1, 'o-', label='最高价格')
-        plt.plot(x, y2, 's-', label='最低价格')
+        plt.plot(x, y1, 'o-', label='The Best')
+        plt.plot(x, y2, 's-', label='The Worst')
         for i in range(len(x)):
             plt.plot([x[i], x[i]], [y1[i], y2[i]], color='green', linewidth=4)
         plt.legend()
