@@ -2,10 +2,11 @@ import requests
 import json
 from datetime import datetime
 import matplotlib.pyplot as plt
+plt.clf()
 url = "https://www.okex.com/api/v5/market/history-index-candles"
-date_string = "2023-07-04T00:00:00.000Z"#str(input("请输入开始时间：")) #
+date_string = "2023-07-05T00:00:00.000Z"#str(input("请输入开始时间：")) #
 date = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%fZ")
-date_string1 = "2023-07-04T12:00:00.000Z"#str(input("请输入结束时间: "))#
+date_string1 = "2023-07-06T00:00:00.000Z"#str(input("请输入结束时间: "))#
 date1 = datetime.strptime(date_string1, "%Y-%m-%dT%H:%M:%S.%fZ")
 params = {
     'instId': 'BTC-USDT',#input("请输入加密货币的类型："), #,
@@ -39,6 +40,8 @@ else:
                                 y1.append(float(j))
                             if(cnt == 4):
                                 y2.append(float(j))
+        print(y1)
+        print(y2)
         plt.figure()
         plt.subplot(111)
         plt.plot(x, y1, 'o-', label='The Best', markersize=2)
