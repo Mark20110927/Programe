@@ -1,13 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int n, a;
+    int n;
+    int a, b, c, d;
     cin >> n;
-    int money[4] = {20, 10, 5, 1};
-    for(int i = 1; i <= 4; i ++){
-        a = n % money[i];
-        cout << a << ' ';
-        n %= money[i];
-    }
+    a = n / 20;
+    n %= 20;
+    b = n / 10;
+    n %= 10;
+    c = n / 5;
+    n %= 5;
+    d = n;
+    cout << a << ' ' << b << ' ' << c << ' ' << d;
+    
     return 0;
 }
