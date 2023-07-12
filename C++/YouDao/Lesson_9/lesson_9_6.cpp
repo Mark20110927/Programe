@@ -27,7 +27,7 @@ int main(){
     if(!flag) cout << "No answer!";
     else{
         sort(ans + 1, ans + 1 + tmp);
-        cout << sizeof(ans) / sizeof(ans[0]) << endl;
+        cout << tmp << endl;
         for(int i = 1; i <= tmp; i ++) cout << ans[i] << ' ';
     }
     return 0;
