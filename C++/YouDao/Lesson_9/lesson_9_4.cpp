@@ -14,9 +14,13 @@ int main(){
     sort(a + 1, a + 1 + n, cmp);
     int ne = a[1].end;
     for(int i = 2; i <= n; i ++){
-        if(a[i].start >= ne){
+        if(a[i].start >= ne && a[i + 1].start > a[i].start){
             res ++;
             ne = a[i].end;
+        }
+        else if(a[i + 1].start > a[i].start){
+            res ++;
+            ne = a[i].end < a[i + 1].end ? a[i + 1].end : a[i].end;
         }
     }
     cout << res;
