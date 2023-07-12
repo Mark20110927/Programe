@@ -7,7 +7,8 @@ struct good{
 int n, c, nc, tmp;
 int ans[105];
 bool cmp(good a, good b){
-    return a.w < b.w;
+    if(a.w == b.w) return a.id < b.id;
+    else return a.w < b.w;
 }
 int main(){
     bool flag = false;
