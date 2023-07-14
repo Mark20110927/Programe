@@ -10,7 +10,13 @@ int main(){
     sort(a + 1, a + 1 + 10);
     if(flag){
         b[1] = 1;
-        for(int i = 2; i <= 10; i ++) b[i] = a[i];
+        c[1] = true;
+        for(int i = 2; i <= 10; i ++){
+            if(!c[i]){
+                b[i] = a[i];
+                c[i] = true;
+            }
+        }
     }
     else{
         int minf = 1000000;
@@ -26,6 +32,6 @@ int main(){
             if(!c[i]) b[i] = c[i];
         }
     }
-    for(int i = 1; i <= 10; i ++) cout << b[i] << ' ';
+    for(int i = 1; i <= 10; i ++) cout << b[i];
     return 0;
 }
