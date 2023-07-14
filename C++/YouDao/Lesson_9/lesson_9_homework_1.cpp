@@ -19,7 +19,14 @@ int main(){
     b[1] = minf;
     c[num] = true;
     for(int i = 1; i <= 10 ;i ++){
-        if(!c[i]) b[i] = a[i];
+        if(!c[i]){
+            b[i] = a[i];
+            c[i] = 1;
+        }
+        else{
+            b[i] = a[i + 1];
+            c[i + 1] = 1;
+        }
     }
     for(int i = 1; i < 10; i ++) cout << b[i];
     return 0;
